@@ -50,6 +50,9 @@ app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/cart", cartRoutes);
 app.use("/api/order", orderRoutes);
+app.use("/", (req, res, next) => {
+  res.status(200).send("Server is running");
+});
 
 //error handling
 app.use((err, req, res, next) => {
